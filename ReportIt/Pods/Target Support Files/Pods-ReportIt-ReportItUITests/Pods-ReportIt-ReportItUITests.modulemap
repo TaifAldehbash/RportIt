@@ -1,0 +1,6 @@
+framework module Pods_ReportIt_ReportItUITests {
+  umbrella header "Pods-ReportIt-ReportItUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
