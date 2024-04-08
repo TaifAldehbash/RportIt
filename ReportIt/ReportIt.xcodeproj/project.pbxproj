@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		8C4212E42BBFE5F200B55718 /* GoogleCloudKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4212E32BBFE5F200B55718 /* GoogleCloudKit */; };
+		8C4212F52BC21CB100B55718 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4212F22BC21CB100B55718 /* LaunchView.swift */; };
+		8C4212F62BC21CB100B55718 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4212F32BC21CB100B55718 /* HomeView.swift */; };
+		8C4212F72BC21CB100B55718 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4212F42BC21CB100B55718 /* Utilities.swift */; };
+		8C4212FC2BC39F5A00B55718 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4212FB2BC39F5A00B55718 /* Router.swift */; };
+		8C4212FE2BC3A05C00B55718 /* ReportBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4212FD2BC3A05C00B55718 /* ReportBugView.swift */; };
+		8C4213002BC3A0DA00B55718 /* LatestBugsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4212FF2BC3A0DA00B55718 /* LatestBugsView.swift */; };
+		8C4213022BC3C37300B55718 /* BugWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4213012BC3C37300B55718 /* BugWidget.swift */; };
+		8C4213062BC3EB1600B55718 /* BugDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4213052BC3EB1600B55718 /* BugDataModel.swift */; };
+		8C4213082BC3EFDD00B55718 /* BugDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4213072BC3EFDD00B55718 /* BugDetailsView.swift */; };
 		8CB3DA482BBDD13600C8F5E3 /* ReportItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3DA472BBDD13600C8F5E3 /* ReportItApp.swift */; };
-		8CB3DA4A2BBDD13600C8F5E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3DA492BBDD13600C8F5E3 /* ContentView.swift */; };
 		8CB3DA4C2BBDD13900C8F5E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB3DA4B2BBDD13900C8F5E3 /* Assets.xcassets */; };
 		8CB3DA4F2BBDD13900C8F5E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB3DA4E2BBDD13900C8F5E3 /* Preview Assets.xcassets */; };
 		8CB3DA592BBDD13900C8F5E3 /* ReportItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3DA582BBDD13900C8F5E3 /* ReportItTests.swift */; };
@@ -35,9 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C4212F22BC21CB100B55718 /* LaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		8C4212F32BC21CB100B55718 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8C4212F42BC21CB100B55718 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8C4212FA2BC21E6000B55718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8C4212FB2BC39F5A00B55718 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8C4212FD2BC3A05C00B55718 /* ReportBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBugView.swift; sourceTree = "<group>"; };
+		8C4212FF2BC3A0DA00B55718 /* LatestBugsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestBugsView.swift; sourceTree = "<group>"; };
+		8C4213012BC3C37300B55718 /* BugWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugWidget.swift; sourceTree = "<group>"; };
+		8C4213052BC3EB1600B55718 /* BugDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDataModel.swift; sourceTree = "<group>"; };
+		8C4213072BC3EFDD00B55718 /* BugDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDetailsView.swift; sourceTree = "<group>"; };
 		8CB3DA442BBDD13600C8F5E3 /* ReportIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReportIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB3DA472BBDD13600C8F5E3 /* ReportItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportItApp.swift; sourceTree = "<group>"; };
-		8CB3DA492BBDD13600C8F5E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8CB3DA4B2BBDD13900C8F5E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CB3DA4E2BBDD13900C8F5E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8CB3DA542BBDD13900C8F5E3 /* ReportItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReportItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +90,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C4213032BC3E0AD00B55718 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C4212F32BC21CB100B55718 /* HomeView.swift */,
+				8C4212F22BC21CB100B55718 /* LaunchView.swift */,
+				8C4212FD2BC3A05C00B55718 /* ReportBugView.swift */,
+				8C4212FF2BC3A0DA00B55718 /* LatestBugsView.swift */,
+				8C4213012BC3C37300B55718 /* BugWidget.swift */,
+				8C4213072BC3EFDD00B55718 /* BugDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C4213042BC3EAF100B55718 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				8C4213052BC3EB1600B55718 /* BugDataModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		8CB3DA3B2BBDD13600C8F5E3 = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +134,12 @@
 		8CB3DA462BBDD13600C8F5E3 /* ReportIt */ = {
 			isa = PBXGroup;
 			children = (
+				8C4213042BC3EAF100B55718 /* DataModels */,
+				8C4213032BC3E0AD00B55718 /* Views */,
+				8C4212FA2BC21E6000B55718 /* Info.plist */,
 				8CB3DA472BBDD13600C8F5E3 /* ReportItApp.swift */,
-				8CB3DA492BBDD13600C8F5E3 /* ContentView.swift */,
+				8C4212F42BC21CB100B55718 /* Utilities.swift */,
+				8C4212FB2BC39F5A00B55718 /* Router.swift */,
 				8CB3DA4B2BBDD13900C8F5E3 /* Assets.xcassets */,
 				8CB3DA4D2BBDD13900C8F5E3 /* Preview Content */,
 			);
@@ -265,8 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CB3DA4A2BBDD13600C8F5E3 /* ContentView.swift in Sources */,
+				8C4212F62BC21CB100B55718 /* HomeView.swift in Sources */,
 				8CB3DA482BBDD13600C8F5E3 /* ReportItApp.swift in Sources */,
+				8C4212FC2BC39F5A00B55718 /* Router.swift in Sources */,
+				8C4213062BC3EB1600B55718 /* BugDataModel.swift in Sources */,
+				8C4212F72BC21CB100B55718 /* Utilities.swift in Sources */,
+				8C4213022BC3C37300B55718 /* BugWidget.swift in Sources */,
+				8C4213082BC3EFDD00B55718 /* BugDetailsView.swift in Sources */,
+				8C4212F52BC21CB100B55718 /* LaunchView.swift in Sources */,
+				8C4212FE2BC3A05C00B55718 /* ReportBugView.swift in Sources */,
+				8C4213002BC3A0DA00B55718 /* LatestBugsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +483,7 @@
 				DEVELOPMENT_TEAM = 2V3BM7WMH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReportIt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ReportIt;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -468,6 +519,7 @@
 				DEVELOPMENT_TEAM = 2V3BM7WMH8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReportIt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ReportIt;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
