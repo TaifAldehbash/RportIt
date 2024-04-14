@@ -42,6 +42,7 @@ struct ReportItApp: App {
                     }
             }
             .environmentObject(router)
+            .navigationViewStyle(.stack)
         }
     }
 }

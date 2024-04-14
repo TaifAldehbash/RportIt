@@ -12,7 +12,8 @@ struct HomeView: View {
     //Router for navigation
     @EnvironmentObject var router: Router
     
-    let bugViewModel = AppRepository.shared.getBugViewModel()
+    @State var bugViewModel = AppRepository.shared.getBugViewModel()
+    
     
     var body: some View {
         ZStack{

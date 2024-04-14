@@ -138,6 +138,9 @@ struct ReportBugView: View {
                         ]
                     )
                 }
+                .sheet(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
+                    ImagePicker(selectedImage: $selectedImage)
+                }
                 }
                 Spacer()
                 
@@ -170,6 +173,10 @@ struct ReportBugView: View {
             // Dismiss the keyboard when tapped outside of the text field
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+    }
+    
+    func loadImage() {
+        // Load image selected from image picker
     }
     
     func submitBug() -> Bool {
