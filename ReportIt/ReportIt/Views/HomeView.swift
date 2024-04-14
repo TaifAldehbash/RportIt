@@ -12,7 +12,7 @@ struct HomeView: View {
     //Router for navigation
     @EnvironmentObject var router: Router
     
-    @State var bugViewModel = AppRepository.shared.getBugViewModel()
+    @ObservedObject var bugViewModel = AppRepository.shared.getBugViewModel()
     
     
     var body: some View {
