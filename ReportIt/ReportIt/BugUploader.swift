@@ -30,7 +30,7 @@ class BugUploader {
             guard let error = error else {
                 self.uploadBugImage(bug.image ?? UIImage()) { success, imageUrl, error in
                     guard let error = error else {
-                        self.googleAPIManager.uploadDataToGoogleSheets(sheetName: sheetTabName, data: [[bug.id, bug.label, bug.description, bug.priority, bug.date, imageUrl ?? ""]]) { result, error in
+                        self.googleAPIManager.uploadDataToGoogleSheets(sheetName: sheetTabName, data: [["\(bug.id)", "\(bug.label)", "\(bug.description)", "\(bug.priority.rawValue)", "\(bug.date)", "\(imageUrl ?? "")" ]]) { result, error in
                             completion(result, imageUrl, error)
                         }
                         return
