@@ -12,7 +12,17 @@ struct ReportBugView: View {
     //Router for navigation
     @EnvironmentObject var router: Router
     
+    @State private var bugLabel: String = ""
     @State private var bugDesc: String = ""
+    @State private var bugPriority: Priority = .Unspecified
+    @State private var selectedImage: UIImage?
+    @State private var isShowingImagePicker: Bool = false
+    @State private var isShowingActionSheet: Bool = false
+    @State private var isDescValid: Bool = true
+    @State private var isImageSelected: Bool = true
+    
+    let bugViewModel = AppRepository.shared.getBugViewModel()
+    let authViewModel = AppRepository.shared.getAuthViewModel()
     
     var body: some View {
         ZStack{
@@ -50,7 +60,7 @@ struct ReportBugView: View {
                 //Field label "Describe the problem"
                 Text("Describe the problem")
                     .font(.system(size: 18))
-                    .foregroundStyle(Color("FontColor2"))
+                    .foregroundStyle(isDescValid ?  Color("FontColor2") : Color.red)
                     .multilineTextAlignment(.leading)
                     .padding(EdgeInsets(top: 0, leading: Utilities.screenWidth * 0.1, bottom: Utilities.screenHeight * 0.01, trailing: 0))
                 
@@ -68,17 +78,37 @@ struct ReportBugView: View {
                         .onChange(of: bugDesc, initial: false) { _, _ in
                             Utilities.applyCharacterLimit(to: &bugDesc, limit: 160)
                         }
-                }.padding(EdgeInsets(top: 0, leading: Utilities.screenWidth * 0.1, bottom: Utilities.screenHeight * 0.03, trailing: 0))
+                }
+                .padding(EdgeInsets(top: 0, leading: Utilities.screenWidth * 0.1, bottom: Utilities.screenHeight * 0.03, trailing: 0))
                 
                 //Field label "Attach image"
                 Text("Attach image")
                     .font(.system(size: 18))
-                    .foregroundStyle(Color("FontColor2"))
+                    .foregroundStyle(isImageSelected ?  Color("FontColor2") : Color.red)
                     .multilineTextAlignment(.leading)
                     .padding(EdgeInsets(top: 0, leading: Utilities.screenWidth * 0.1, bottom: Utilities.screenHeight * 0.01, trailing: 0))
                 
+                if let image = selectedImage {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(Color.white)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                        .frame(width: Utilities.screenWidth * 0.79, height: Utilities.screenHeight * 0.16)
+                        
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width: Utilities.screenWidth * 0.79, height: Utilities.screenHeight * 0.16)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .padding(EdgeInsets(top: 0, leading: Utilities.screenWidth * 0.1, bottom: Utilities.screenHeight * 0.03, trailing: 0))
+                    
+                } else{
                 //Attach image button
-                Button(action: {}, label: {
+                Button(action: {
+                    // Show action sheet to choose capture or select image
+                    isShowingActionSheet = true
+                }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
                             .fill(Color.white)
@@ -92,14 +122,33 @@ struct ReportBugView: View {
                     }
                 })
                 .padding(EdgeInsets(top: 0, leading: Utilities.screenWidth * 0.1, bottom: Utilities.screenHeight * 0.03, trailing: 0))
-                
+                .actionSheet(isPresented: $isShowingActionSheet) {
+                    ActionSheet(
+                        title: Text("Attach Image"),
+                        buttons: [
+                            .default(Text("Choose Image"), action: {
+                                // Show image picker
+                                isShowingImagePicker = true
+                            }),
+                            .default(Text("Capture Screenshot"), action: {
+                                // Capture screenshot
+                                selectedImage = ImagePicker.captureScreenshot()
+                            }),
+                            .cancel()
+                        ]
+                    )
+                }
+                }
                 Spacer()
                 
                 //Submit bug button
                 HStack {
                     Spacer()
                     Button(action: {
-                        //Action to be added
+                        let result = submitBug()
+                        if result {
+                            router.navigateBack()
+                        }
                     }, label: {
                         Text("Submit Bug")
                             .font(.system(size: 18))
@@ -111,11 +160,43 @@ struct ReportBugView: View {
                     })
                     
                     Spacer()
-                }.padding(.bottom, Utilities.screenHeight * 0.1)
+                }
+                .padding(.bottom, Utilities.screenHeight * 0.1)
             }
             
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
+        .onTapGesture {
+            // Dismiss the keyboard when tapped outside of the text field
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
+    
+    func submitBug() -> Bool {
+        guard let selectedImage = selectedImage, !bugDesc.isEmpty else {
+            self.isImageSelected = selectedImage != nil
+            self.isDescValid = !bugDesc.isEmpty
+            return false
+        }
+        
+        if authViewModel.state == .signedOut {
+            self.router.navigate(to: .SignIn)
+            return false
+        }
+        
+        bugViewModel.submitBug(label: bugLabel, description: bugDesc, priority: bugPriority, image: selectedImage) { success, error in
+            if let error = error {
+                debugPrint(error)
+                if error.localizedDescription == "Access token is missing" {
+                    authViewModel.state = .signedOut
+                    self.router.navigate(to: .SignIn)
+                }
+            }
+        }
+        
+        return true
+    }
+
 }
 
 #Preview {

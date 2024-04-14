@@ -12,7 +12,9 @@ struct LatestBugsView: View {
     //Router for navigation
     @EnvironmentObject var router: Router
     
-    var recentBugs: [BugDataModel] = [BugDataModel(description: "In the contact form, pressing 'Enter' triggers the send button instead of creating a new line.", imageUrl: "https://www.tabnine.com/blog/wp-content/uploads/2023/02/Screen-Shot-2023-02-05-at-13.22.01.png", date: Date()), BugDataModel(description: "In the contact form, pressing 'Enter' triggers the send button instead of creating a new line.", imageUrl: "https://www.tabnine.com/blog/wp-content/uploads/2023/02/Screen-Shot-2023-02-05-at-13.22.01.png", date: Date()), BugDataModel(description: "In the contact form, pressing 'Enter' triggers the send button instead of creating a new line.", imageUrl: "https://www.tabnine.com/blog/wp-content/uploads/2023/02/Screen-Shot-2023-02-05-at-13.22.01.png", date: Date())]
+    let bugViewModel = AppRepository.shared.getBugViewModel()
+    
+//    var recentBugs: [BugDataModel] = [BugDataModel(description: "In the contact form, pressing 'Enter' triggers the send button instead of creating a new line.", imageUrl: "https://www.tabnine.com/blog/wp-content/uploads/2023/02/Screen-Shot-2023-02-05-at-13.22.01.png", date: Date()), BugDataModel(description: "In the contact form, pressing 'Enter' triggers the send button instead of creating a new line.", imageUrl: "https://www.tabnine.com/blog/wp-content/uploads/2023/02/Screen-Shot-2023-02-05-at-13.22.01.png", date: Date()), BugDataModel(description: "In the contact form, pressing 'Enter' triggers the send button instead of creating a new line.", imageUrl: "https://www.tabnine.com/blog/wp-content/uploads/2023/02/Screen-Shot-2023-02-05-at-13.22.01.png", date: Date())]
     
     var body: some View {
         ZStack{
@@ -52,8 +54,8 @@ struct LatestBugsView: View {
                 
                 //Bug details list
                 ScrollView (showsIndicators: false){
-                    ForEach(recentBugs){bug in
-                        BugDetailsView(description: bug.description, imageUrl: bug.imageUrl, date: bug.date)
+                    ForEach(bugViewModel.recentBugs){bug in
+                        BugDetailsView(description: bug.description, imageUrl: bug.imageUrl!, date: bug.date)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: Utilities.screenHeight * 0.03, trailing: 0))
                     }
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: Utilities.screenHeight * 0.03, trailing: 0))

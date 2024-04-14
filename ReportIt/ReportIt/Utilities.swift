@@ -21,7 +21,7 @@ struct Utilities {
     
     static let dateFormatter2: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "dd-MM-yyyy"
         return formatter
     }()
     

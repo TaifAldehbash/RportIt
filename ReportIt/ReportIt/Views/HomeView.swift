@@ -12,6 +12,8 @@ struct HomeView: View {
     //Router for navigation
     @EnvironmentObject var router: Router
     
+    let bugViewModel = AppRepository.shared.getBugViewModel()
+    
     var body: some View {
         ZStack{
             //Backgroud color
@@ -47,7 +49,7 @@ struct HomeView: View {
                     .foregroundStyle(Color("FontColor1"))
                     .multilineTextAlignment(.center)
                 
-                BugWidget(bugsCount: 0)
+                BugWidget(bugsCount: bugViewModel.totalBugs)
                     .padding(.top, Utilities.screenHeight * 0.03)
                 
                 Spacer()

@@ -17,6 +17,13 @@
 		8C4213022BC3C37300B55718 /* BugWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4213012BC3C37300B55718 /* BugWidget.swift */; };
 		8C4213062BC3EB1600B55718 /* BugDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4213052BC3EB1600B55718 /* BugDataModel.swift */; };
 		8C4213082BC3EFDD00B55718 /* BugDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4213072BC3EFDD00B55718 /* BugDetailsView.swift */; };
+		8C42130A2BC5204400B55718 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4213092BC5204400B55718 /* ImagePicker.swift */; };
+		8C42130C2BC52BD200B55718 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C42130B2BC52BD200B55718 /* AppRepository.swift */; };
+		8C42130E2BC52C1C00B55718 /* BugUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C42130D2BC52C1C00B55718 /* BugUploader.swift */; };
+		8C4213102BC52E2000B55718 /* BugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C42130F2BC52E2000B55718 /* BugViewModel.swift */; };
+		8CA29C382BCA9433001C1D07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CA29C372BCA9433001C1D07 /* GoogleService-Info.plist */; };
+		8CA29C3B2BCACC52001C1D07 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA29C3A2BCACC52001C1D07 /* AuthenticationViewModel.swift */; };
+		8CA29C3D2BCB5138001C1D07 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA29C3C2BCB5138001C1D07 /* SignInView.swift */; };
 		8CB3DA482BBDD13600C8F5E3 /* ReportItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB3DA472BBDD13600C8F5E3 /* ReportItApp.swift */; };
 		8CB3DA4C2BBDD13900C8F5E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB3DA4B2BBDD13900C8F5E3 /* Assets.xcassets */; };
 		8CB3DA4F2BBDD13900C8F5E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB3DA4E2BBDD13900C8F5E3 /* Preview Assets.xcassets */; };
@@ -53,6 +60,13 @@
 		8C4213012BC3C37300B55718 /* BugWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugWidget.swift; sourceTree = "<group>"; };
 		8C4213052BC3EB1600B55718 /* BugDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDataModel.swift; sourceTree = "<group>"; };
 		8C4213072BC3EFDD00B55718 /* BugDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDetailsView.swift; sourceTree = "<group>"; };
+		8C4213092BC5204400B55718 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8C42130B2BC52BD200B55718 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
+		8C42130D2BC52C1C00B55718 /* BugUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugUploader.swift; sourceTree = "<group>"; };
+		8C42130F2BC52E2000B55718 /* BugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugViewModel.swift; sourceTree = "<group>"; };
+		8CA29C372BCA9433001C1D07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8CA29C3A2BCACC52001C1D07 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		8CA29C3C2BCB5138001C1D07 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		8CB3DA442BBDD13600C8F5E3 /* ReportIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReportIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB3DA472BBDD13600C8F5E3 /* ReportItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportItApp.swift; sourceTree = "<group>"; };
 		8CB3DA4B2BBDD13900C8F5E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +113,8 @@
 				8C4212FF2BC3A0DA00B55718 /* LatestBugsView.swift */,
 				8C4213012BC3C37300B55718 /* BugWidget.swift */,
 				8C4213072BC3EFDD00B55718 /* BugDetailsView.swift */,
+				8C4213092BC5204400B55718 /* ImagePicker.swift */,
+				8CA29C3C2BCB5138001C1D07 /* SignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +125,15 @@
 				8C4213052BC3EB1600B55718 /* BugDataModel.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		8CA29C392BCACBF9001C1D07 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8C42130F2BC52E2000B55718 /* BugViewModel.swift */,
+				8CA29C3A2BCACC52001C1D07 /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8CB3DA3B2BBDD13600C8F5E3 = {
@@ -134,12 +159,16 @@
 		8CB3DA462BBDD13600C8F5E3 /* ReportIt */ = {
 			isa = PBXGroup;
 			children = (
+				8CA29C392BCACBF9001C1D07 /* ViewModels */,
 				8C4213042BC3EAF100B55718 /* DataModels */,
 				8C4213032BC3E0AD00B55718 /* Views */,
 				8C4212FA2BC21E6000B55718 /* Info.plist */,
+				8CA29C372BCA9433001C1D07 /* GoogleService-Info.plist */,
 				8CB3DA472BBDD13600C8F5E3 /* ReportItApp.swift */,
 				8C4212F42BC21CB100B55718 /* Utilities.swift */,
 				8C4212FB2BC39F5A00B55718 /* Router.swift */,
+				8C42130B2BC52BD200B55718 /* AppRepository.swift */,
+				8C42130D2BC52C1C00B55718 /* BugUploader.swift */,
 				8CB3DA4B2BBDD13900C8F5E3 /* Assets.xcassets */,
 				8CB3DA4D2BBDD13900C8F5E3 /* Preview Content */,
 			);
@@ -283,6 +312,7 @@
 			files = (
 				8CB3DA4F2BBDD13900C8F5E3 /* Preview Assets.xcassets in Resources */,
 				8CB3DA4C2BBDD13900C8F5E3 /* Assets.xcassets in Resources */,
+				8CA29C382BCA9433001C1D07 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,11 +341,17 @@
 				8CB3DA482BBDD13600C8F5E3 /* ReportItApp.swift in Sources */,
 				8C4212FC2BC39F5A00B55718 /* Router.swift in Sources */,
 				8C4213062BC3EB1600B55718 /* BugDataModel.swift in Sources */,
+				8CA29C3B2BCACC52001C1D07 /* AuthenticationViewModel.swift in Sources */,
 				8C4212F72BC21CB100B55718 /* Utilities.swift in Sources */,
 				8C4213022BC3C37300B55718 /* BugWidget.swift in Sources */,
 				8C4213082BC3EFDD00B55718 /* BugDetailsView.swift in Sources */,
+				8C42130C2BC52BD200B55718 /* AppRepository.swift in Sources */,
+				8C42130E2BC52C1C00B55718 /* BugUploader.swift in Sources */,
+				8C4213102BC52E2000B55718 /* BugViewModel.swift in Sources */,
+				8C42130A2BC5204400B55718 /* ImagePicker.swift in Sources */,
 				8C4212F52BC21CB100B55718 /* LaunchView.swift in Sources */,
 				8C4212FE2BC3A05C00B55718 /* ReportBugView.swift in Sources */,
+				8CA29C3D2BCB5138001C1D07 /* SignInView.swift in Sources */,
 				8C4213002BC3A0DA00B55718 /* LatestBugsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
