@@ -31,8 +31,8 @@ struct BugDetailsView: View {
                 Text(description)
                     .font(.system(size: 15))
                     .foregroundColor(Color("FontColor3"))
+                    .frame(width: Utilities.screenWidth * 0.78, alignment: .leading)
                     .multilineTextAlignment(.leading)
-                    .frame(width: Utilities.screenWidth * 0.78)
                     .padding(EdgeInsets(top: 0, leading: Utilities.screenWidth * 0.05, bottom: Utilities.screenHeight * 0.03, trailing: Utilities.screenWidth * 0.05))
                 
                 AsyncImage(url: URL(string: imageUrl)){ image in
