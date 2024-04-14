@@ -34,7 +34,12 @@ open ReportIt.xcodeproj
 5. For Google Sign in please use these credentials email: reportittestuser@gmail.com password 12345678Rr
 6. Bug data will be uploaded to Google Sheets automatically.
 
+
+## Figma Design
+
+Check out the design of ReportIt on Figma [here](https://www.figma.com/file/cdFofT6CRVsWjtBMa4snj3/Untitled?type=design&node-id=0%3A1&mode=design&t=OADaMDLAGeRqwuX1-1).
+
+
 ## Additional Information
 
 - For any questions or issues, please contact taifmaldehbash@gmail.com.
-- Contributions are welcome! Feel free to submit pull requests or open issues.
